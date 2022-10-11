@@ -1,0 +1,6 @@
+{
+    "verbose": true,
+    "ext": "html,scss",
+    "watch": ["src/"],
+    "exec": "npm run lint"
+}

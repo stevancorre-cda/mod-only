@@ -1,0 +1,37 @@
+{
+    "name": "modonly",
+    "version": "1.0.0",
+    "license": "MIT",
+    "author": "Stévan Corre <stevancorre@protonmail.com> (https://stevancorre.com)",
+    "type": "module",
+    "scripts": {
+        "build": "npm run lint && rimraf dist/* && parcel build",
+        "dev": "concurrently \"nodemon\" \"parcel --open\"",
+        "preinstall": "npx only-allow pnpm",
+        "lint": "npm run lint:html && npm run lint:scss && npm run lint:prettier",
+        "lint:html": "eslint src/*.html --cache --fix",
+        "lint:prettier": "prettier .*rc *.json --write --cache",
+        "lint:scss": "stylelint src/*.scss --cache --fix"
+    },
+    "devDependencies": {
+        "@html-eslint/eslint-plugin": "^0.15.0",
+        "@html-eslint/parser": "^0.15.0",
+        "@parcel/core": "^2.7.0",
+        "@parcel/transformer-sass": "^2.7.0",
+        "concurrently": "^7.4.0",
+        "eslint": "7",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "nodemon": "^2.0.20",
+        "parcel": "^2.7.0",
+        "parcel-plugin-stylelint-all": "^0.2.0",
+        "postcss": "^8.4.17",
+        "prettier": "^2.7.1",
+        "rimraf": "^3.0.2",
+        "sass": "^1.55.0",
+        "stylelint": "^14.13.0",
+        "stylelint-config-standard-scss": "^5.0.0"
+    },
+    "browserslist": "> 0.5%, last 2 versions, not dead",
+    "source": "src/index.html"
+}

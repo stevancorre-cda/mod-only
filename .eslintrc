@@ -1,0 +1,21 @@
+{
+    "extends": ["prettier", "plugin:@html-eslint/recommended", "eslint:recommended"],
+    "plugins": ["prettier", "@html-eslint"],
+    "overrides": [
+        {
+            "files": ["*.html"],
+            "parser": "@html-eslint/parser",
+            "extends": ["plugin:@html-eslint/recommended"]
+        }
+    ],
+    "rules": {
+        "prettier/prettier": "error"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module"
+    },
+    "env": {
+        "browser": true
+    }
+}
